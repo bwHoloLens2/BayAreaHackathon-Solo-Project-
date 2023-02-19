@@ -68,8 +68,10 @@ const docSnap = await getDoc(docRef);
             credits: userDB.credits,
             notes: notes
         }).then(() => {
+          setTimeout(() => {
             location.href = "/editor/"+docid
-        })
+          }, 500);
+            })
     }
 </script>
 <html data-theme="pastel">
