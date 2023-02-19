@@ -37,7 +37,12 @@ const openai = new OpenAIApi(configuration);
         placeholder: "Start writing your notes :D."
       });
       //quill inner html
-       quill.root.innerHTML = document.noteContent;
+      try {
+        quill.root.innerHTML = document.noteContent;
+      } catch (error) {
+        location.reload();
+      }
+      //  quill.root.innerHTML = document.noteContent;
        addEventListener("keyup", (event) => {
     if (event.keyCode === 18) {
     aiAutocomplete();
