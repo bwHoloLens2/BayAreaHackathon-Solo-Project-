@@ -60,11 +60,11 @@ const docSnap = await getDoc(docRef);
             noteContent: "",
             docid: docid,
           }
-        const docRef = doc(db, "Users", user.uid);
+        const docRef = doc(db, "Users", userDB.uid);
         await setDoc(docRef, {
-            email: user.email,
-            uid: user.uid,
-            name: user.displayName,
+            email: userDB.email,
+            uid: userDB.uid,
+            name: userDB.name,
             credits: userDB.credits,
             notes: notes
         })
