@@ -1,7 +1,7 @@
 <script>
 	import { auth, db } from './../../../scripts/fb.js';
 	import { onMount } from "svelte";
-	import Status from '../../../Components/Status.svelte';
+	import Status from '../../../components/Status.svelte';
     import { doc, getDoc, setDoc } from "firebase/firestore";
 	import Navbar from '../../../components/Navbar.svelte';
 	import Editr from '../../../components/Editr.svelte';

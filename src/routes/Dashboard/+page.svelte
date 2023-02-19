@@ -2,7 +2,7 @@
     import { auth, db } from "../../scripts/fb";
 	import { onMount } from "svelte";
     import { doc, getDoc, setDoc } from "firebase/firestore";
-	import Status from "../../Components/Status.svelte";
+	import Status from "../../components/Status.svelte";
     import Navbar from "../../components/Navbar.svelte";
     import { v4 as uuidv4 } from 'uuid';
     let user = "Loading..."
