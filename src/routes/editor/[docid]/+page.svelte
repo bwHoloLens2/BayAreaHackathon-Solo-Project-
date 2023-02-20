@@ -11,6 +11,7 @@
     let user = "Loading..."
     let userDB = "Loading..."
     let document = "Loading..."
+    import Quill from "quill";
     onMount(async () => {
         docid = location.href.split('/').pop().replace(/\?/g,'')
         auth.onAuthStateChanged( async (usr) => {
@@ -43,7 +44,7 @@ const docSnap = await getDoc(docRef);
 </script>
 {#if loading != "Loading..." &&  document != "Loading..." && document}
     <Navbar userDB={userDB}></Navbar>
-    <Editr userDB={userDB} document={document}/>
+    <Editr userDB={userDB} docum={document} Quill={Quill}/>
 
 {:else} 
 <Status />

@@ -1,7 +1,6 @@
 <script>
 	import { db } from './../scripts/fb.js';
     import { onMount } from "svelte";
-    import Quill from "quill";
     import { doc, getDoc,updateDoc,setDoc, collection } from "firebase/firestore";
     import {
     Configuration,
@@ -15,10 +14,11 @@ let NoteGPT = "";
 let AiResponse = "";
 let flashcards = "";
 let noteGptLoading = false;
+export let Quill;
 const openai = new OpenAIApi(configuration);
     let editor;
     export let userDB;
-    export let document = "Loading...";
+    export let docum = "Loading...";
       export let toolbarOptions = [
           [{ header: 1 }, { header: 2 }, "blockquote", "link", "image", "video"],
           ["bold", "italic", "underline", "strike"],
@@ -28,7 +28,7 @@ const openai = new OpenAIApi(configuration);
       ];
       let quill;
     onMount(async () => {
-      
+
       quill = new Quill(editor, {
         modules: {
           toolbar: toolbarOptions
@@ -38,7 +38,7 @@ const openai = new OpenAIApi(configuration);
       });
       //quill inner html
       try {
-        quill.root.innerHTML = document.noteContent;
+        quill.root.innerHTML = docum.noteContent;
       } catch (error) {
         location.reload();
       }
@@ -60,10 +60,10 @@ const openai = new OpenAIApi(configuration);
         userDB = docSnap.data();
         const dr = doc(collection(db, "Users/"),userDB.uid);
           // const docSnap = await getDoc(docRef);
-        userDB.notes[document.docid] = {
+        userDB.notes[docum.docid] = {
             noteContent: quill.root.innerHTML,
-            docid: document.docid,
-            title: document.title
+            docid: docum.docid,
+            title: docum.title
         }
           updateDoc(dr, {
             notes  :userDB.notes});  
@@ -177,9 +177,9 @@ const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
         userDB = docSnap.data();
-        if (userDB.notes[document.docid]) {
+        if (userDB.notes[docum.docid]) {
     const notes = userDB.notes;
-    let docid = document.docid;
+    let docid = docum.docid;
     delete notes[docid];
     console.log(notes)
     let docref = doc(db, "Users", userDB.uid)
@@ -209,7 +209,7 @@ location.href = "/Dashboard"
     <div class="tile is-vertical is-8">
       <div class="tile is-parent">
         <article class="tile is-child notification box"style="height: 80vh">
-          <p class="title" contenteditable="true" bind:textContent={document.title}></p>
+          <p class="title" contenteditable="true" bind:textContent={docum.title}></p>
           <p class="subtitle">Start writing your notes :D. (PS Click on Title Above To Change It ^)</p>
           <div class="content">
             <!-- Content -->
