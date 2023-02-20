@@ -1,4 +1,4 @@
-# Welcome to NotesAi! 🎉🎉🎉
+# Welcome to QuikNotez! 🎉🎉🎉
 
 Hey there! Thanks for checking out my project! What we have here is a **virtual study room!** 🔥🔥🔥
 
