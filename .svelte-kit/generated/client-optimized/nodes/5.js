@@ -1,1 +1,1 @@
-export { default as component } from "../../../../src/routes/editor/[docid]/+page.svelte";
+export { default as component } from "../../../../src/routes/Get-Started/+page.svelte";

@@ -1,4 +1,5 @@
 <script>
+
 	import { auth, db } from './../../../scripts/fb.js';
 	import { onMount } from "svelte";
 	import Status from '../../../components/Status.svelte';
