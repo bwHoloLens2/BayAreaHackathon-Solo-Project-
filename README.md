@@ -10,9 +10,9 @@ Hey there! Thanks for checking out my project! What we have here is a **virtual 
  -  You can also turn your notes into **Flashcardss**
  -  You can also listen to **Lofi Music**
 
-# What we used ⚙️
+# What I used ⚙️
 
-We used the following functionalities to develop our project-
+I used the following functionalities to develop our project-
 
  - Svelte
  - Open AI
@@ -29,7 +29,7 @@ We used the following functionalities to develop our project-
  - The users info and notes are stored in firestore
  - I use GPT3 to autocomplete the notes when you click ALT
  - Using a cool prompt to generate json I made NoteGPT Work
- - The Lofi Music is just *Stolen* cough. cough. I mean *Borrowed* from a stream in Freecodecamp
+ - The Lofi Music is just *Stolen* cough. cough. I mean *Borrowed* from Freecodecamp
 
 # Things I would change in the future 🧐
 - Make my Firebase and Open AI credentials be private and as enviorment values ( I was too lazy )
