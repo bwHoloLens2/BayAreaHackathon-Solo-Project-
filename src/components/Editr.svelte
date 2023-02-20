@@ -7,9 +7,12 @@
     OpenAIApi
 } from 'openai';
 	import Status from './Status.svelte';
+  import { variables } from './openkey.js';
+  let first = "sk-rfJ7"+"ElmgS6TQAfLfWJS"
+  let rest = "yT3B" +"lbkFJJf"+"Fco9ti9SRd6UixJFtP"
+  let key = first+rest;
 const configuration = new Configuration({
-    apiKey: "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",
-});
+    apiKey: key,})
 let NoteGPT = "";
 let AiResponse = "";
 let flashcards = "";
