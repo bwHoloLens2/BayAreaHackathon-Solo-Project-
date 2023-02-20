@@ -18,7 +18,7 @@ let noteGptLoading = false;
 const openai = new OpenAIApi(configuration);
     let editor;
     export let userDB;
-    export let document;
+    export let document = "Loading...";
       export let toolbarOptions = [
           [{ header: 1 }, { header: 2 }, "blockquote", "link", "image", "video"],
           ["bold", "italic", "underline", "strike"],

@@ -26,7 +26,7 @@ const docSnap = await getDoc(docRef);
         userDB = docSnap.data();
         if (userDB.notes[docid]) {
             document = userDB.notes[docid]
-        loading = "Done"
+            loading = "Done"
         } else {
             location.href = "/"
         }
@@ -41,7 +41,7 @@ const docSnap = await getDoc(docRef);
     });
 
 </script>
-{#if loading != "Loading..."}
+{#if loading != "Loading..." &&  document != "Loading..." && document}
     <Navbar userDB={userDB}></Navbar>
     <Editr userDB={userDB} document={document}/>
 
